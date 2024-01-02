@@ -4,7 +4,7 @@
  *
  * @package       GOODOC
  * @author        Dzmitry Makarski
- * @license       gplv2
+ * @license       gplv3
  * @version       0.0.1
  *
  * @wordpress-plugin
@@ -24,21 +24,42 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
+
+// Plugin name
+define('GOODOC_NAME', 'WP GooDoc');
+
+// Plugin version
+define('GOODOC_VERSION', '0.0.1');
+
+// Plugin Root File
+define('GOODOC_PLUGIN_FILE', __FILE__);
+
+// Plugin base
+define('GOODOC_PLUGIN_BASE', plugin_basename(GOODOC_PLUGIN_FILE));
+
+// Plugin Folder Path
+define('GOODOC_PLUGIN_DIR', plugin_dir_path(GOODOC_PLUGIN_FILE));
+
+// Plugin Folder URL
+define('GOODOC_PLUGIN_URL', plugin_dir_url(GOODOC_PLUGIN_FILE));
 
 /**
- * HELPER COMMENT START
- * 
- * This file contains the logic required to run the plugin.
- * To add some functionality, you can simply define the WordPres hooks as followed: 
- * 
- * add_action( 'init', 'some_callback_function', 10 );
- * 
- * and call the callback function like this 
- * 
- * function some_callback_function(){}
- * 
- * HELPER COMMENT END
+ * Load the main class for the core functionality
+ */
+require_once GOODOC_PLUGIN_DIR . 'includes/classes/GOODOC_Init.php';
+
+/**
+ * The main function to load the only instance
+ * of our primary class.
+ *
+ * @return  object|GOODOC_Init
+ * @since   0.0.1
+ * @author  Dzmitry Makarski
  */
 
-// Include your custom code here.
+function WP_GOODOC(): GOODOC_Init {
+    return new GOODOC_Init();
+}
+
+WP_GOODOC();

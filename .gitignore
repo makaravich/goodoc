@@ -27,6 +27,7 @@ wp-config.php
 # Example plugin
 /wp-content/plugins/hello.php
 /wp-content/plugins/akismet
+/wp-content/plugins/login-with-google
 
 # Uploads
 /wp-content/uploads/
@@ -51,3 +52,7 @@ wp-config.php
 
 #Configuration files
 *.conf
+
+#Drafts
+/gauth
+/test
