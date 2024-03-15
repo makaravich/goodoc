@@ -93,8 +93,8 @@ class GOODOC_Common_API {
 	 * @return bool|string
 	 */
 	public function call_the_api( string $url, array $params = [], array $headers = [], string $protocol = 'get' ): bool|string {
-		global $goodoc_options;
-		$users_token = $goodoc_options->get_option( 'opt_google_api_client_token' );
+		global $goodoc_settings;
+		$users_token = $goodoc_settings->get_option( 'api_token' );
 
 		if ( ! empty( $users_token ) ) {
 			$headers = array_merge( $headers, [ 'Authorization: Bearer ' . $users_token ] );

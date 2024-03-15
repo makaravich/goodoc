@@ -30,4 +30,13 @@
   float: unset;
 }
 
+.goodoc-options-wrapper input.goodoc-input-field {
+  width: 100%;
+  max-width: 700px;
+}
+.goodoc-options-wrapper .goodoc-description {
+  color: #1e1f26;
+  font-style: italic;
+}
+
 /*# sourceMappingURL=goodoc-admin.css.map */

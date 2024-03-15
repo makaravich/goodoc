@@ -18,7 +18,7 @@ class GOODOC_Import_Page extends GOODOC_Common_API {
 		$response = $this->call_the_api( 'list' );
 		@$response = json_decode( $response );
 
-		$this->debug_log( $response );
+		//$this->debug_log( $response );
 		?>
         <div class="goodoc-content">
             <h2><?php echo get_admin_page_title() ?></h2>
@@ -47,8 +47,8 @@ class GOODOC_Import_Page extends GOODOC_Common_API {
 
 				<?php
 			} elseif ( isset( $response->error ) ) {
-				$this->warning_log( 'There are errors from the GooDoc Server:' );
-				$this->error_log( $response->error );
+				//$this->warning_log( 'There are errors from the GooDoc Server:' );
+				//$this->error_log( $response->error );
 
 				$msg = is_string( $response->error ) ? $response->error : __( 'There are errors in the respond from the GooDoc Server. Try logging in again on the login page.', 'goodoc' );
 
