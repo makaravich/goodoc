@@ -24,8 +24,6 @@
  */
 
 // Exit if accessed directly.
-use GOODOC_Classes\GOODOC_Init;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -71,13 +69,13 @@ require_once GOODOC_PLUGIN_DIR . 'includes/classes/GOODOC_Ajax.php';
  * The main function to load the only instance
  * of our primary class.
  *
- * @return GOODOC_Init
+ * @return GOODOC_Classes\GOODOC_Init
  * @since   0.0.1
  * @author  Dzmitry Makarski
  */
 
-function WP_GOODOC(): GOODOC_Init {
-	return new GOODOC_Init();
+function WP_GOODOC(): GOODOC_Classes\GOODOC_Init {
+	return new GOODOC_Classes\GOODOC_Init();
 }
 
 WP_GOODOC();
